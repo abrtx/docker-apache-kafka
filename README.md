@@ -1,31 +1,31 @@
 
 # Table of Contents
 
-1.  [Apache Kafka](#orgf1efc15)
-    1.  [What is](#org36dc46a)
-    2.  [Why?](#orgcd95a67)
-    3.  [Main Kafka concepts](#org66650e5)
-        1.  [Topic](#org7ae636e)
-        2.  [Consumers](#orgaad4c99)
-        3.  [Producers](#org5371b97)
-2.  [Install](#org8690233)
-    1.  [Docker-compose](#org109010d)
-        1.  [Run](#orga93447a)
-        2.  [connect to shell docker](#org89f00e1)
-        3.  [create a topic (On Docker)](#org4d77050)
-        4.  [list of topics](#org2736ffa)
-    2.  [Python](#orgdb77f04)
-        1.  [Package](#org9aad9b5)
-        2.  [Example Local Mode](#org4c527f6)
+1.  [Apache Kafka](#orgd5fae01)
+    1.  [What is](#org8ebcc7e)
+    2.  [Why?](#orgc67c37d)
+    3.  [Main Kafka concepts](#org3a2644c)
+        1.  [Topic](#orgceda933)
+        2.  [Consumers](#org86deae7)
+        3.  [Producers](#orgfcbd30c)
+2.  [Install](#org60fa705)
+    1.  [Docker-compose](#org990ed73)
+        1.  [Run](#orgdf702cb)
+        2.  [connect to shell docker](#orgd4bc1ee)
+        3.  [create a topic (On Docker)](#orgb135c80)
+        4.  [list of topics](#org548ba9a)
+    2.  [Python](#org566a053)
+        1.  [Package](#org31185b5)
+        2.  [Example Local Mode](#orgab3d166)
 
 
 
-<a id="orgf1efc15"></a>
+<a id="orgd5fae01"></a>
 
 # Apache Kafka
 
 
-<a id="org36dc46a"></a>
+<a id="org8ebcc7e"></a>
 
 ## What is
 
@@ -34,7 +34,7 @@ data in `REAL-TIME` from event sources, and save
 this in, for example a database.
 
 
-<a id="orgcd95a67"></a>
+<a id="orgc67c37d"></a>
 
 ## Why?
 
@@ -42,38 +42,38 @@ Syncronicity. Some time we need to maintain certain
 data, our core data `ON-LINE` in multiples centers. 
 
 
-<a id="org66650e5"></a>
+<a id="org3a2644c"></a>
 
 ## Main Kafka concepts
 
 
-<a id="org7ae636e"></a>
+<a id="orgceda933"></a>
 
 ### Topic
 
 Category or stream name for the messages are published.
 
 
-<a id="orgaad4c99"></a>
+<a id="org86deae7"></a>
 
 ### Consumers
 
 Client that `read` data from Kafka Topic
 
 
-<a id="org5371b97"></a>
+<a id="orgfcbd30c"></a>
 
 ### Producers
 
 Client that `publish` data to Kafka Topic
 
 
-<a id="org8690233"></a>
+<a id="org60fa705"></a>
 
 # Install
 
 
-<a id="org109010d"></a>
+<a id="org990ed73"></a>
 
 ## Docker-compose
 
@@ -101,49 +101,51 @@ Client that `publish` data to Kafka Topic
           - "/etc/localtime:/etc/localtime:ro"
 
 
-<a id="orga93447a"></a>
+<a id="orgdf702cb"></a>
 
 ### Run
 
     docker compose up
 
 
-<a id="org89f00e1"></a>
+<a id="orgd4bc1ee"></a>
 
 ### connect to shell docker
 
     docker exec -it kafka bash
 
 
-<a id="org4d77050"></a>
+<a id="orgb135c80"></a>
 
 ### create a topic (On Docker)
 
     /opt/kafka/bin#kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic messages
 
 
-<a id="org2736ffa"></a>
+<a id="org548ba9a"></a>
 
 ### list of topics
 
     kafka-topics.sh --list --zookeeper zookeeper:2181
 
 
-<a id="orgdb77f04"></a>
+<a id="org566a053"></a>
 
 ## Python
 
 
-<a id="org9aad9b5"></a>
+<a id="org31185b5"></a>
 
 ### Package
 
     pip install kafka-python
 
 
-<a id="org4c527f6"></a>
+<a id="orgab3d166"></a>
 
 ### Example Local Mode
+
+Example from <https://youtu.be/LHNtL4zDBuk?si=c9jBgYLA-hirv254>
 
 1.  Consumer
 
